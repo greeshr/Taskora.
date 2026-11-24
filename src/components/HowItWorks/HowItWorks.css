@@ -1,0 +1,301 @@
+/* ==========================================================================
+   How It Works Component Styles - Taskora Design System
+   ========================================================================== */
+
+.how-it-works-section {
+  position: relative;
+  padding: 100px 0 120px;
+  background: linear-gradient(180deg, var(--bg-white) 0%, var(--bg-lavender-light) 40%, var(--bg-lavender-light) 80%, var(--bg-white) 100%);
+  overflow: hidden;
+}
+
+/* Background Ambient Glow */
+.how-it-works-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(162, 155, 254, 0.25) 0%, rgba(243, 240, 255, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.how-it-works-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Section Header
+   -------------------------------------------------------------------------- */
+.how-it-works-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 64px;
+}
+
+.how-it-works-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background-color: var(--accent-lavender-light);
+  border: 1px solid var(--accent-lavender-subtle);
+  color: var(--primary-purple);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-purple);
+}
+
+.how-it-works-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+  margin-bottom: 18px;
+}
+
+.how-it-works-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Steps Wrapper & Progression
+   -------------------------------------------------------------------------- */
+.steps-wrapper {
+  position: relative;
+}
+
+/* Desktop Connecting Line */
+.desktop-progress-line {
+  position: absolute;
+  top: 66px;
+  left: 14%;
+  right: 14%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(108, 92, 231, 0.15) 0%, 
+    rgba(108, 92, 231, 0.45) 50%, 
+    rgba(108, 92, 231, 0.15) 100%
+  );
+  border-top: 2px dashed rgba(108, 92, 231, 0.35);
+  background-color: transparent;
+  z-index: 0;
+}
+
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Step Card */
+.step-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 36px 30px;
+  box-shadow: 0 4px 20px rgba(108, 92, 231, 0.05);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+  cursor: pointer;
+}
+
+.step-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(108, 92, 231, 0.3);
+  box-shadow: 0 20px 42px -10px rgba(108, 92, 231, 0.16), 0 0 0 1px rgba(108, 92, 231, 0.2);
+}
+
+/* Step Top Row */
+.step-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.step-number-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.step-number-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--primary-purple);
+}
+
+.step-number-text {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.step-icon-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent-lavender-light) 0%, #ede9fe 100%);
+  border: 1px solid var(--accent-lavender-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-purple);
+  transition: all 0.28s ease;
+  box-shadow: 0 4px 10px rgba(108, 92, 231, 0.08);
+}
+
+.step-card:hover .step-icon-badge {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, #7c3aed 100%);
+  color: #ffffff;
+  transform: scale(1.06);
+  box-shadow: 0 8px 18px rgba(108, 92, 231, 0.32);
+}
+
+/* Step Body */
+.step-body {
+  margin-bottom: 24px;
+}
+
+.step-highlight-tag {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--primary-purple);
+  background-color: var(--accent-lavender-light);
+  border: 1px solid var(--accent-lavender-subtle);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.35;
+  margin-bottom: 12px;
+  transition: color var(--transition-fast);
+}
+
+.step-card:hover .step-title {
+  color: var(--primary-purple);
+}
+
+.step-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Micro Visual Snippet */
+.step-snippet-box {
+  background-color: var(--bg-lavender-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  transition: background-color var(--transition-fast);
+}
+
+.step-card:hover .step-snippet-box {
+  background-color: #faf9ff;
+  border-color: var(--accent-lavender);
+}
+
+.step-snippet-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+/* Desktop Arrow Connector between Cards */
+.step-desktop-arrow {
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 10px rgba(108, 92, 231, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-purple);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+/* Tablets and small desktops */
+@media (max-width: 992px) {
+  .desktop-progress-line {
+    display: none;
+  }
+
+  .step-desktop-arrow {
+    display: none;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .how-it-works-section {
+    padding: 80px 0;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 640px) {
+  .how-it-works-section {
+    padding: 60px 0;
+  }
+
+  .how-it-works-header {
+    margin-bottom: 40px;
+  }
+
+  .step-card {
+    padding: 28px 22px;
+  }
+
+  .step-number-text {
+    font-size: 1.6rem;
+  }
+}
